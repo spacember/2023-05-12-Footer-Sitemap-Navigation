@@ -1,15 +1,17 @@
 const ExcelJS = require('exceljs')
 const workBook = new ExcelJS.Workbook()
 
+// retrieves the sheet
 async function getSheet(path, sheet) {
   try {
     await workBook.xlsx.readFile(path)
     return workBook.getWorksheet(sheet)
   } catch (err) {
-    console.log(err);
+    log(`Error occured on getData.js function getSheet`)
   }
 }
 
+// returns a hardcoded field
 function getField() {
   return {
     id: "pregnancyTopics",
@@ -18,7 +20,8 @@ function getField() {
   }
 }
 
-function getLinks(sheet) {
+// returns an array of links
+function getLinks(sheet, locale) {
   const rows = sheet.getRows(8, 18)
   const links = [];
 
@@ -31,8 +34,8 @@ function getLinks(sheet) {
     const url = rows[index + 1].values[3].text
 
     const link = {
-      title: { 'en-US': title },
-      url: { 'en-US': url }
+      title: { [locale]: title },
+      url: { [locale]: url }
     }
 
     links.push(link)
@@ -40,13 +43,13 @@ function getLinks(sheet) {
   return links;
 }
 
-// 'getData' returns excel data converted into an object
-//  higher order function 
-async function getData(path, sheetName) {
+//  returns an object of the excel data 
+//  higher order function
+async function getData(path, sheetName, locale) {
 
   const sheet = await getSheet(path, sheetName)
   const field = getField()
-  const links = getLinks(sheet)
+  const links = getLinks(sheet, locale)
 
   return {
     field: field,
