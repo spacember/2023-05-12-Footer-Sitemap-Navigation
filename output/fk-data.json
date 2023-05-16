@@ -1,0 +1,45 @@
+{
+    "field": {
+        "id": "pregnancyTopics",
+        "name": "Pregnancy Topics",
+        "type": "Array"
+    },
+    "links": [
+        {
+            "title": "See all pregnancy",
+            "link": "https://www.pampers.com/en-us/pregnancy"
+        },
+        {
+            "title": "Pregnancy Symptoms",
+            "link": "https://www.pampers.com/en-us/pregnancy/pregnancy-symptoms"
+        },
+        {
+            "title": "Pregnancy Announcement",
+            "link": "https://www.pampers.com/en-us/pregnancy/pregnancy-announcement"
+        },
+        {
+            "title": "Prenatal health and wellness",
+            "link": "https://www.pampers.com/en-us/pregnancy/prenatal-health-and-wellness"
+        },
+        {
+            "title": "Baby Names",
+            "link": "https://www.pampers.com/en-us/pregnancy/baby-names"
+        },
+        {
+            "title": "Baby shower",
+            "link": "https://www.pampers.com/en-us/pregnancy/baby-shower"
+        },
+        {
+            "title": "Multiples",
+            "link": "https://www.pampers.com/en-us/pregnancy/multiple-pregnancy"
+        },
+        {
+            "title": "Giving Birth",
+            "link": "https://www.pampers.com/en-us/pregnancy/giving-birth"
+        },
+        {
+            "title": "Preparing for new Baby",
+            "link": "https://www.pampers.com/en-us/pregnancy/preparing-for-your-new-baby"
+        }
+    ]
+}
