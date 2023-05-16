@@ -35,12 +35,9 @@ async function createLinkEntries(env, contentType, links) {
   })
 }
 
-// err 422
-// allowedResources
-// Supported field properties: localized, required, omitted and disabled.
 async function createField(env, contentType, field, entryContentType) {
   try {
-    const footer = await env.getContentType(contentType)
+    let footer = await env.getContentType(contentType)
     const fields = footer.fields
 
     // validations
@@ -57,7 +54,7 @@ async function createField(env, contentType, field, entryContentType) {
   }
 }
 
-async function main() {
+(async function () {
 
   const env = await connectToCMA();
 
@@ -70,6 +67,4 @@ async function main() {
   // creates a field of type references to many, accepts only specific entry type 'link'
   createField(env, CONTENT_TYPE, field, ENTRY_CONTENT_TYPE)
 
-}
-
-main()
+})()

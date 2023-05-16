@@ -14,7 +14,7 @@ function getField() {
   return {
     id: "pregnancyTopics",
     name: "Pregnancy Topics",
-    type: "Link"
+    type: "Array"
   }
 }
 
