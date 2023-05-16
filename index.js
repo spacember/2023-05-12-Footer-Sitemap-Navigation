@@ -1,8 +1,10 @@
 "use strict"
 
+const contentful = require("contentful-management");
 const config = require('./config/config.json')
-
 const getData = require('./utils/getData')
+const log = require("./utils/log");
+
 const PATH = config.excel.path
 const SHEET_NAME = config.excel.sheetName
 
@@ -13,9 +15,10 @@ const LOCALE = config.space.locale
 const CONTENT_TYPE = config.contentType
 const ENTRY_CONTENT_TYPE = config.entryContentType
 
-const contentful = require("contentful-management");
+const date = new Date();
 
-async function connectToCMA() {
+// authenticates with CMA and returns the environment
+async function connect() {
   try {
     const client = contentful.createClient({ accessToken: ACCESS_TOKEN })
     const space = await client.getSpace(SPACEID)
@@ -25,22 +28,28 @@ async function connectToCMA() {
   }
 }
 
-async function createLinkEntries(env, contentType, links) {
+// creates a list of entries of contentType 'link'
+async function createEntries(env, contentType, links) {
   links.forEach(async link => {
     try {
       let entry = await env.createEntry(contentType, { fields: link })
       entry = await env.getEntry(entry.sys.id)
       await entry.publish()
-    } catch (err) { }
+   
+      log(`DATE: ${date} \nPublished entry: id: ${entry.sys.id}`)
+    } catch (err) {
+      log(`Error occured on createEntries: id: ${entry.sys.id}`)
+    }
   })
 }
 
+// creates a field which accepts an array of contentType 'link'
 async function createField(env, contentType, field, entryContentType) {
   try {
     let footer = await env.getContentType(contentType)
     const fields = footer.fields
 
-    // validations
+    // validation : should accept only contentType 'link'
     const validations = [{ linkContentType: [entryContentType] }]
     field.items = { type: 'Link', validations: validations, linkType: 'Entry' }
 
@@ -48,23 +57,27 @@ async function createField(env, contentType, field, entryContentType) {
     await footer.update()
     footer = await env.getContentType(contentType)
     await footer.publish()
+
+    log(`DATE: ${date} \nPublished field: ${field.name} - id: ${field.id}`)
   }
   catch (err) {
-    console.log(err);
+    log(`Error occured on createField: ${field.name} - id: ${field.id}`)
   }
 }
 
+// main function
 (async function () {
 
-  const env = await connectToCMA();
+  // authenticates with CMA and returns the environment
+  const environment = await connect();
 
   // gets data from excel file
-  const { field, links } = await getData(PATH, SHEET_NAME)
+  const { field, links } = await getData(PATH, SHEET_NAME, LOCALE)
 
-  // creates an array of entries of 'link': 
-  createLinkEntries(env, ENTRY_CONTENT_TYPE, links)
+  // creates a list of entries of contentType 'link'
+  createEntries(environment, ENTRY_CONTENT_TYPE, links)
 
-  // creates a field of type references to many, accepts only specific entry type 'link'
-  createField(env, CONTENT_TYPE, field, ENTRY_CONTENT_TYPE)
+  // creates a field which accepts an array of contentType 'link'
+  createField(environment, CONTENT_TYPE, field, ENTRY_CONTENT_TYPE)
 
 })()
