@@ -34,8 +34,10 @@ async function createEntries(env, contentType, links) {
     try {
       let entry = await env.createEntry(contentType, { fields: link })
       entry = await env.getEntry(entry.sys.id)
-      await entry.publish()
-   
+
+      if (await entry.isPublished())
+        await entry.publish()
+
       log(`DATE: ${date} \nPublished entry: id: ${entry.sys.id}`)
     } catch (err) {
       log(`Error occured on createEntries: id: ${entry.sys.id}`)
@@ -56,7 +58,9 @@ async function createField(env, contentType, field, entryContentType) {
     fields.push(field)
     await footer.update()
     footer = await env.getContentType(contentType)
-    await footer.publish()
+
+    if (await footer.isPublished())
+      await footer.publish()
 
     log(`DATE: ${date} \nPublished field: ${field.name} - id: ${field.id}`)
   }
@@ -72,12 +76,13 @@ async function createField(env, contentType, field, entryContentType) {
   const environment = await connect();
 
   // gets data from excel file
-  const { field, links } = await getData(PATH, SHEET_NAME, LOCALE)
+  // works but not great, should try graph
+  const sitemapNav = await getData(PATH, SHEET_NAME, LOCALE)
 
-  // creates a list of entries of contentType 'link'
-  createEntries(environment, ENTRY_CONTENT_TYPE, links)
+  // // creates a list of entries of contentType 'link'
+  // createEntries(environment, ENTRY_CONTENT_TYPE, links)
 
-  // creates a field which accepts an array of contentType 'link'
-  createField(environment, CONTENT_TYPE, field, ENTRY_CONTENT_TYPE)
+  // // creates a field which accepts an array of contentType 'link'
+  // createField(environment, CONTENT_TYPE, field, ENTRY_CONTENT_TYPE)
 
 })()

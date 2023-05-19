@@ -1,6 +1,6 @@
 # Contentful Management Api - full-kit
 
-A full-kit given by *Melanie Bouic*, although not a complete full kit.
+A full-kit given by *Melanie Bouic*, **although not a complete full ki**t.
 
 ### This script does the following actions in order:
 
@@ -11,7 +11,7 @@ A full-kit given by *Melanie Bouic*, although not a complete full kit.
 
 ### To run this script
 
-1. cd into 'full kit'
+1. cd into 2023-05-12-Footer-Sitemap-Navigation
 2. Run node index.js.
 
 ### config.json
