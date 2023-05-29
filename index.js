@@ -1,88 +1,86 @@
-"use strict"
-
 const contentful = require("contentful-management");
 const config = require('./config/config.json')
-const getData = require('./utils/getData')
+const extract = require('./utils/extract')
 const log = require("./utils/log");
-
-const PATH = config.excel.path
-const SHEET_NAME = config.excel.sheetName
 
 const ACCESS_TOKEN = config.accessToken
 const SPACEID = config.space.spaceId
 const ENVIRONMENTID = config.space.environmentId
 const LOCALE = config.space.locale
-const CONTENT_TYPE = config.contentType
-const ENTRY_CONTENT_TYPE = config.entryContentType
 
+const EXCEL = config.excel
+const OUTPUT_FILE = config.outputFile
+
+const fs = require('fs')
 const date = new Date();
 
 // authenticates with CMA and returns the environment
-async function connect() {
-  try {
-    const client = contentful.createClient({ accessToken: ACCESS_TOKEN })
-    const space = await client.getSpace(SPACEID)
-    return await space.getEnvironment(ENVIRONMENTID)
-  } catch (err) {
-    log(`Error occured on connect`)
-  }
-}
-
-// creates a list of entries of contentType 'link'
-async function createEntries(env, contentType, links) {
-  links.forEach(async link => {
+const connect = async () => {
     try {
-      let entry = await env.createEntry(contentType, { fields: link })
-      entry = await env.getEntry(entry.sys.id)
-
-      if (await entry.isPublished())
-        await entry.publish()
-
-      log(`DATE: ${date} \nPublished entry: id: ${entry.sys.id}`)
+        const client = contentful.createClient({ accessToken: ACCESS_TOKEN })
+        const space = await client.getSpace(SPACEID)
+        return await space.getEnvironment(ENVIRONMENTID)
     } catch (err) {
-      log(`Error occured on createEntries: id: ${entry.sys.id}`)
+        log(`Error occured on connect`)
     }
-  })
 }
 
-// creates a field which accepts an array of contentType 'link'
-async function createField(env, contentType, field, entryContentType) {
-  try {
-    let footer = await env.getContentType(contentType)
-    const fields = footer.fields
+// creates an entry of any type
+// in progress
+const createEntry = async (env, entry) => {
+    const [type] = Object.keys(entry);
 
-    // validation : should accept only contentType 'link'
-    const validations = [{ linkContentType: [entryContentType] }]
-    field.items = { type: 'Link', validations: validations, linkType: 'Entry' }
-
-    fields.push(field)
-    await footer.update()
-    footer = await env.getContentType(contentType)
-
-    if (await footer.isPublished())
-      await footer.publish()
-
-    log(`DATE: ${date} \nPublished field: ${field.name} - id: ${field.id}`)
-  }
-  catch (err) {
-    log(`Error occured on createField: ${field.name} - id: ${field.id}`)
-  }
+    const createdEntry = await env.createEntry(type, { fields: entry })
+    await createdEntry.publish()
+    // object value is now an id
+    entry = createdEntry.sys.id
 }
+
+// creates entries in this order: link, subCategorie, categorie 
+// in progress
+const createEntries = async (env, sitemapNav) => {
+    const { categories } = sitemapNav
+
+    categories.forEach(async categorie => {
+        // if categorie without subCategorie
+        if ('links' in categorie) {
+            const { links } = categorie
+            // creates an array of link entries
+            links.forEach(async link => { createEntry(env, { link }) })
+            // create a categorie entry, using the array of links
+            // under construction
+        }
+        // if categorie with subCategories
+        else {
+            const { subCategories } = categorie
+
+            subCategories.forEach(subCategorie => {
+                const { links } = subCategorie
+                // creates link entries
+                links.forEach(async link => { createEntry(env, { link }) })
+                // create a subCategorie entry with the link entries
+                // under construction
+            })
+            // creates a categorie entry with subCategorie entries
+            // under construction
+        }
+    })
+}
+
+// creates a sitemap navigation field on 'footer' after creating the required entries
+// in progress
+async function createFieldSitemapNav(env, sitemapNav) { }
 
 // main function
-(async function () {
-
-  // authenticates with CMA and returns the environment
-  const environment = await connect();
-
-  // gets data from excel file
-  // works but not great, should try graph
-  const sitemapNav = await getData(PATH, SHEET_NAME, LOCALE)
-
-  // // creates a list of entries of contentType 'link'
-  // createEntries(environment, ENTRY_CONTENT_TYPE, links)
-
-  // // creates a field which accepts an array of contentType 'link'
-  // createField(environment, CONTENT_TYPE, field, ENTRY_CONTENT_TYPE)
-
+(async () => {
+    // the environment
+    const env = await connect();
+    // the sitemapNav object
+    const sitemapNav = await extract(EXCEL, LOCALE)
+    // outputs the sitemapNav object to the specified file
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(sitemapNav, null, 2), 'utf-8');
+    // creates sitemapNav entries. Order: link, subCategorie, categorie 
+    await createEntries(env, sitemapNav)
+    // creates a sitemap navigation field on 'footer' after creating the required entries
+    await createFieldSitemapNav(env, sitemapNav)
 })()

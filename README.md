@@ -1,13 +1,11 @@
-# Contentful Management Api - full-kit
+# CMA - Footer sitemap navigation
 
-A full-kit given by *Melanie Bouic*, **although not a complete full ki**t.
+This script creates and populates the footer section for pampers, using a full-kit as input.
 
 ### This script does the following actions in order:
 
 1. Authenticates with CMA
 2. Gets data from excel file
-3. Creates a list of entries of contentType 'link'
-4. Creates a field which accepts an array of contentType 'link'
 
 ### To run this script
 
@@ -30,3 +28,6 @@ A full-kit given by *Melanie Bouic*, **although not a complete full ki**t.
 ### Re-running the script
 
 The script should be run once.
+
+
+// todo: Object.create() vs Object.assign()
