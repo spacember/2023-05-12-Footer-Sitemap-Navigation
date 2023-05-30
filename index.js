@@ -12,7 +12,6 @@ const EXCEL = config.excel
 const OUTPUT_FILE = config.outputFile
 
 const fs = require('fs')
-const date = new Date();
 
 // authenticates with CMA and returns the environment
 const connect = async () => {
@@ -26,18 +25,18 @@ const connect = async () => {
 }
 
 // creates an entry of any type
-// in progress
-const createEntry = async (env, entry) => {
-    const [type] = Object.keys(entry);
+const createEntry = async (env, type, fields) => {
 
-    const createdEntry = await env.createEntry(type, { fields: entry })
-    await createdEntry.publish()
+    // const entry = await env.createEntry(type, { fields: fields })
+    // await entry.publish()
     // object value is now an id
-    entry = createdEntry.sys.id
+    // fields.sys.id
+
+    fields.id = '1234'
+    fields.title = {}
 }
 
 // creates entries in this order: link, subCategorie, categorie 
-// in progress
 const createEntries = async (env, sitemapNav) => {
     const { categories } = sitemapNav
 
@@ -46,9 +45,10 @@ const createEntries = async (env, sitemapNav) => {
         if ('links' in categorie) {
             const { links } = categorie
             // creates an array of link entries
-            links.forEach(async link => { createEntry(env, { link }) })
+            links.forEach(async link => await createEntry(env, 'link', link))
             // create a categorie entry, using the array of links
             // under construction
+            console.log(links);
         }
         // if categorie with subCategories
         else {
@@ -57,7 +57,7 @@ const createEntries = async (env, sitemapNav) => {
             subCategories.forEach(subCategorie => {
                 const { links } = subCategorie
                 // creates link entries
-                links.forEach(async link => { createEntry(env, { link }) })
+                links.forEach(async link => createEntry(env, 'link', link))
                 // create a subCategorie entry with the link entries
                 // under construction
             })
@@ -68,7 +68,6 @@ const createEntries = async (env, sitemapNav) => {
 }
 
 // creates a sitemap navigation field on 'footer' after creating the required entries
-// in progress
 async function createFieldSitemapNav(env, sitemapNav) { }
 
 // main function
@@ -82,5 +81,5 @@ async function createFieldSitemapNav(env, sitemapNav) { }
     // creates sitemapNav entries. Order: link, subCategorie, categorie 
     await createEntries(env, sitemapNav)
     // creates a sitemap navigation field on 'footer' after creating the required entries
-    await createFieldSitemapNav(env, sitemapNav)
+    // await createFieldSitemapNav(env, sitemapNav)
 })()
