@@ -2,16 +2,15 @@ const ExcelJS = require('exceljs')
 const locale = 'en-US'
 
 // regexen
-const regexLevelTitle = /^Level Title/i
+const regexSitemap = /^Level Title/i
 const regexCategorie = /^Categorie/i
 const regexSubCategorie = /^Sub categorie/i
-const regexTopic = /^Topic/i
+const regexLink = /^Topic/i
 
-/**
- * returns the excel file as an array of rows
- * @param {contains the path to excel and the required sheet} excel 
- * @returns a 2d array of rows
- */
+// global common parent
+let sitemapNav = {}
+
+// returns the excel sheet as an array of rows
 const getRows = async (excel) => {
     try {
         const { path, sheetName } = excel
@@ -20,15 +19,12 @@ const getRows = async (excel) => {
         return workBook.getWorksheet(sheetName).getSheetValues()
     }
     catch (err) {
-        log(`Error occured ongetRows`)
+        console.log('Error occured on getRows: ' + err)
     }
 }
 
-/**
- * adds the name of the sitemap navigation to sitemapNav
- * @param {the name of the sitemapNav} name 
- */
-const addTitle = (name) => {
+// adds the name of the sitemap navigation to sitemapNav
+const addSitemap = (name) => {
     sitemapNav = {
         name: { [locale]: name },
         categories: { [locale]: [] },
@@ -36,12 +32,11 @@ const addTitle = (name) => {
 }
 
 /**
- * adds a categorie to sitemapNav. categories can have subCategories
- * @param {the name of the categorie} name 
+ * adds a categorie || categorieWithSubCategories to sitemapNav
  * @param {the type of the next row} nextRowType (link || subCategorie)
  */
 const addCategorie = (name, nextRowType) => {
-    // if  subCategorie
+    // if categorieWithSubCategories
     if (regexSubCategorie.test(nextRowType)) {
         const categorieWithSubCategories = {
             title: { [locale]: name },
@@ -58,57 +53,44 @@ const addCategorie = (name, nextRowType) => {
     }
 }
 
-/**
- * adds a subCategorie to lastCategorie
- * @param {the name of the subCategorie} name 
- * @param {the url of the subCategorie} url 
- */
+// adds a subCategorie to lastCategorie
 const addSubCategorie = (name, url) => {
     const subCategorie = {
         title: { [locale]: name },
         url: { [locale]: typeof url === 'object' ? url.text : url },
         links: { [locale]: [] },
     }
-    const lastCategorieIndex = sitemapNav.categories[locale].length - 1
-    sitemapNav.categories[locale][lastCategorieIndex].subCategories[locale].push(subCategorie)
+    sitemapNav.categories[locale].at(-1).subCategories[locale].push(subCategorie)
 }
 
-/**
- * adds a link object to lastCategorie or lastCategorie's lastSubCategorie
- * @param {the title of the link} title 
- * @param {the url of the link} url 
- */
+// adds a link to lastCategorie || lastCategorie's lastSubCategorie
 const addLink = (title, url) => {
     const link = {
         title: { [locale]: title },
         url: { [locale]: typeof url === 'object' ? url.text : url }
     }
-    const lastIndexCategorie = sitemapNav.categories[locale].length - 1
-    const lastCategorie = sitemapNav.categories[locale][lastIndexCategorie]
+    const lastCategorie = sitemapNav.categories[locale].at(-1)
     // if subCategorie
     if ('subCategories' in lastCategorie) {
-        const lastIndexSubCategorie = lastCategorie.subCategories[locale].length - 1
-        const lastSubCategorie = lastCategorie.subCategories[locale][lastIndexSubCategorie]
+        const lastSubCategorie = lastCategorie.subCategories[locale].at(-1)
         lastSubCategorie.links[locale].push(link)
     } else
         lastCategorie.links[locale].push(link)
 }
 
 /**
- * adds children objects to sitemapNav object. Empty at start
+ * adds children to sitemapNav
  * children: [sitemapNav, categorie, categorieWithSubCategorie, subCategorie, link]
  * each row is compared to children and a subsequent child is added to sitemapNav
- * @param {the excel sheet as an array of rows} rows 
  */
 const createSitemapNav = rows => {
     rows.forEach((row, index, rows) => {
         // current row
         const [, , type, name] = row
-
-        // if title
-        if (regexLevelTitle.test(type))
-            addTitle(name)
-        // if categorie
+        // if sitemap
+        if (regexSitemap.test(type))
+            addSitemap(name)
+        // if categorie || categorieWithSubCategorie
         if (regexCategorie.test(type)) {
             const nextRowType = rows[index + 1][2]
             addCategorie(name, nextRowType)
@@ -118,20 +100,18 @@ const createSitemapNav = rows => {
             const url = rows[index + 1][3]
             addSubCategorie(name, url)
         }
-        // if topic
-        if (regexTopic.test(type)) {
+        // if link
+        if (regexLink.test(type)) {
             const url = rows[index + 1][3]
             addLink(name, url)
         }
     })
 }
 
-// sole global common parent
-let sitemapNav = {}
-//  main function, returns an object of sitemap navigation field
+// module entry point, returns an object of sitemap navigation field
 async function extract(excel) {
     try {
-        // the sheet as an array
+        // the excel sheet as an array
         const rows = await getRows(excel)
         // creates the sitemap navigation
         createSitemapNav(rows)

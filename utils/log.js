@@ -1,7 +1,8 @@
 const fs = require('fs');
+const date = new Date();
 
 const log = (msg) => {
-    const data = `${msg}\n`;
+    const data = `DATE: ${date}\n` + `${msg}\n`;
 
     fs.appendFile("log.txt", data, (err) => {
         if (err) {
