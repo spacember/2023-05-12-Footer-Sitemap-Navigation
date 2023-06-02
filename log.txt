@@ -1,110 +1,112 @@
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: See All Pregnancy , id: 6xUJnc6YCkALpj8EnDKVjp
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Pregnancy Symptoms, id: 7jJjut4PRgVWl6eBRqmbcx
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Pregnancy Announcement, id: 3e139EUIi9PPEaQuJnVLUp
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Prenatal health and wellness, id: PXRgLgWE5DVZfAB7AupfG
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Baby Names, id: bvY4WGmtC4G4CU81D3Fgv
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Baby shower , id: 1VGheCenKJi6giZdQptWTM
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Multiples, id: Ffm2pfqW9p9NmyPCtAO8i
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Giving Birth , id: MSfXWR7FzD9OlHTtUKJBb
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Preparing for new Baby, id: 6hDSKjxOhVbhqvW8lOaPxt
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Newborn, id: 2Cq6M7KYCdf1AriZbzKbXZ
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: categorie, name: Pregnancy Topics, id: 11OT7OyLQFpzdtauqbfam3
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Activities, id: MQyhK2prXTG7BpxbyFjDe
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Development, id: 6cbUSjSGfqz3XmXWpWlROs
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Care, id: 6RtTJbLI53elQ5k3M9eTYD
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Health, id: uZRMMPIObCIKz8bAiLQ8p
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Feeding, id: 5ZG1SkZNfHOPwEqCRiNjnF
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Sleep, id: 1RAncO18yZmQrJynVUUmc6
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Diapering, id: 5RyRwsUhmHia18GztIOB41
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Teething, id: 4i9apmgRBYlnUWvEvIHzz6
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Parenting life, id: 2mJbghR6rSKxkkd4YSdWb
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: subCategorie, name: All Baby Articles, id: 67cEFI48SPdfTqCBrhXgLH
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Activities, id: 1BGKnZcSAYcoz4L6SSX095
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Health, id: 7c1LQmw3fk9qTD1zYh4SR2
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Development, id: 75IJwhTJlHYVpdBGLsFNjL
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Sleep, id: 1w83HUrHd5Fxbe8UyDQuHo
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Nutrition, id: 7lyg3D7Pk9LAgBmz6BuxnN
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Potty Training , id: 3IdW6Gz060hbZaaUf7u9tj
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Parenting Life, id: 7up3nQS1clslU1q5oJ0Sc4
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: subCategorie, name: All Toddler Articles, id: 2W0NeneX1Llx6HPbIDgBZf
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: categorieWithSubCategorie, name: Parenting topics, id: 2AmsXVdSZIfPiM48UAJhGn
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Baby Name Generator, id: 2o6BRKlHjLV2TAkyJTg6l1
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Due Date Calculator , id: AO5m8EIWbxwZV306acQpw
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Hospital Bag Checklist, id: 01AwyztjGs2J6crKL0e1I1
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Online Birthing Classes , id: 3da0swtEptAG2iiF6wwlja
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Chinese Gender Predictor, id: 5NP29HtSyDTTPSyPiKtW5h
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Pregnancy Calendar, id: 1w6wC2l4PzEHIF3ZOgHEh7
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Baby Birthday Facts, id: 2cNHdz2q4HD6CZJlHyqYLU
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Weight Gain Calculator, id: 3sl3MnxgQ7y09bwVG9xG12
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Quizzes, id: 2carSihNJCFMJvwnv1Dh6M
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Happy Monthiversary Printables, id: 337WdTkOCXVPMV4Ztq4t9v
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Follow My Pregnancy Notifier , id: 5bJXpodxyE9Oxs4aOaKB6m
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Baby Development Milestones, id: 4ZgT28A55e0ouWgTAgewN0
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Baby Growth Chart Calculator, id: 2Z5tEQs6nFXhpozV5rmUZJ
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: See All About Us, id: 6TaoQ9gDjgRJmpT0RvnKGD
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: categorie, name: Tools, id: 1mudpftLRgnjtCJPwwGCUt
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Big Acts Of Love, id: 7sAtU1UGPTagMB6xuxa0Mv
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Diapers and Wipes, id: 4X6BgahSVxLWzwVYNPwRX
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Quality and Safety, id: 3P6V6BuV31WSUgQ893NkgA
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Sustainability, id: yAAl4yx03ncRCIMx2ir2G
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Pampers UNICEF Partnership, id: 8mXhmzHbl8mdag9Iu9XSW
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Pampers Heritage, id: 1WIGuCrx7RdQin3T62kCFe
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Pampers Purpose, id: 60eO95IxIQfDdJAVk92ESm
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Editorial Guidelines and Contributors, id: 747tzOACiPSa2plSzMl7Vy
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: link, name: Contact Us, id: 2nbngjtljwNQNn67zklacX
-DATE: Thu Jun 01 2023 17:49:24 GMT+0400 (Mauritius Standard Time) 
-Published entry:: type: categorie, name: About us, id: 1braA1NwQIt8nqSVEKOSVX
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: See All Pregnancy  - id: 4ON60wIQRrBjFvayoPSUwC
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Pregnancy Symptoms - id: 6T704xly1bWh0FT26TksFW
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Pregnancy Announcement - id: 2qrTmOeyrlfFX10EhpECMH
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Prenatal health and wellness - id: 3FZ6c0JrT9LTi2g40vodPj
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Baby Names - id: 2MGXQN4vCYty9KXdnBgqqz
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Baby shower  - id: 3s0wPoncU5QYCPtvOCKLOc
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Multiples - id: 7eTRrfKwTc9EN5wx6xLWK9
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Giving Birth  - id: 3pB53GaQREQLstXRE2Xkga
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Preparing for new Baby - id: 7H2EvWBi30rNXhVfPI7GrG
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry categorie: name: Pregnancy Topics - id: 53PpObWqzOhr9DV3yRXSVo
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Newborn - id: 5nEmfIiaIMcBKzyFA2nBlZ
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Activities - id: 1cIVA8lugBqHCtiu2MDaLm
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Development - id: 2ILCxgWUnJko0KhWJk8Fwh
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Care - id: 3ebTv7NIwgEby1TcK0qw8
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Health - id: 5RMtkpFEVbIvFmc6POblrx
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Feeding - id: 69wVUAQqdRSQp7jbcJCLIw
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Sleep - id: 2UdQ4V6SZMw2XO5mu4AEdn
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Diapering - id: 5aFnhnhmUA42QiwLukMVU6
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Teething - id: mgTHw30q1HjCYjzKvNrTz
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Parenting life - id: Ij3Vl0IKccqQWykdurDwG
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry subCategorie: name: All Baby Articles - id: 18O0DmAXxx6RPIDJxFPVAd
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Activities - id: 2jY6NXXZoKR2I32nSqB5ls
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Health - id: cBpQKJ8Z4ys7HkwBdBggd
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Development - id: 45nZA6ZD2371mQ1uoPuxoT
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Sleep - id: 317p5fPR0N494q5cpNj68U
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Nutrition - id: 3SQwWWZc1T0CXyRakfJt40
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Potty Training  - id: pB88kMNiHmX0Ll7oQkgml
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Parenting Life - id: 2e5fpjEURIirRvk9lVMUyn
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry subCategorie: name: All Toddler Articles - id: 3lWCxsEczZjGMXyknnCDF7
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry categorieWithSubCategorie: name: Parenting topics - id: 7EEqIuNabPyeEbPb3L856k
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Baby Name Generator - id: 1m8hB5wv2w50j4NawDiJeX
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Due Date Calculator  - id: 2089WavAXrkpQKX6xWtK0H
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Hospital Bag Checklist - id: 2PeAAYL6zbiXvkoMgvHcxV
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Online Birthing Classes  - id: 2GCkkSFLYfYNx06n2t4iIX
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Chinese Gender Predictor - id: 2QHAQRuuIQReF6nIFGgwh8
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Pregnancy Calendar - id: 1nJue9Xh5DliEoobuXzg1B
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Baby Birthday Facts - id: 7IL3IdfBI4mVvVDixH0to9
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Weight Gain Calculator - id: 18T9zuJBHMo1JlkVC7AlTc
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Quizzes - id: 6jK2ATyu1H3pYtnSBilOGN
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Happy Monthiversary Printables - id: 716KLVAfMeMQjYP7QuL6XW
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Follow My Pregnancy Notifier  - id: 403nFAgnbckLEkmCHCWpMO
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Baby Development Milestones - id: 1yUKFGEj0n8YfsCbo5c0Ua
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Baby Growth Chart Calculator - id: UqGmneTyLNqiVPj77YyNH
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry categorie: name: Tools - id: 53GjpFZA5GttRB5sZWeYQW
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: See All About Us - id: 66rX3GUIhff8Nba331Ylaw
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Big Acts Of Love - id: 3o3WSoB5XuHT7Q41XI6OcB
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Diapers and Wipes - id: 27qbvSFwNtoTKzXZR9AkCD
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Quality and Safety - id: 71RS3ok8L42X2Nqmp48kLm
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Sustainability - id: 5zEWZaa9qcFC22G6ssSP4T
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Pampers UNICEF Partnership - id: 5JzUjtXgxFWQ2glYNexjiO
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Pampers Heritage - id: 4ECCLDmeTfZSJmLf1PbwpZ
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Pampers Purpose - id: 70y27DBdRZYdTbjozQ709M
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Editorial Guidelines and Contributors - id: 6s0XRZSOYEx8udjnGeaCfi
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry link: name: Contact Us - id: 2sUBXadMSJag6jFR2wtIgF
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Published entry categorie: name: About us - id: NohpSfp6yUUqhgPmYY4IW
+DATE: Fri Jun 02 2023 20:01:05 GMT+0400 (Mauritius Standard Time)
+Updated footer: 6aZGqSHVLzdXmUxBrLRVBT field: sitemap navigation
