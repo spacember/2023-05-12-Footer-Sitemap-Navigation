@@ -2,7 +2,6 @@ const contentful = require("contentful-management");
 const config = require('./config/config.json')
 const extract = require('./utils/extract')
 const log = require("./utils/log");
-const fs = require('fs');
 
 const ACCESS_TOKEN = config.accessToken
 const SPACEID = config.space.spaceId
@@ -10,7 +9,6 @@ const ENVIRONMENTID = config.space.environmentId
 const LOCALE = config.space.locale
 const FOOTERID = config.footerId
 const EXCEL = config.excel
-const OUTPUT_FILE = config.outputFile
 
 const getEnvironment = async () => {
     try {
@@ -18,15 +16,7 @@ const getEnvironment = async () => {
         const space = await client.getSpace(SPACEID)
         return await space.getEnvironment(ENVIRONMENTID)
     } catch (err) {
-        log(`Error occured on connect`)
-    }
-}
-
-const outputObjectToFile = (path, object) => {
-    try {
-        fs.writeFileSync(path, JSON.stringify(object, null, 2), 'utf-8');
-    } catch (err) {
-        log(`Error occured on outputObjectToFile`)
+        log(`Error occured on getEnvironment`)
     }
 }
 
@@ -53,18 +43,19 @@ const createLinks = async (env, links) => {
     for (let index = 0; index < links.length; index++) {
         links[index] = await createEntry(env, 'link', links[index])
     }
+    return links
 }
 
 const createCategorie = async (env, categorie) => {
-    const links = categorie.links[LOCALE]
-    await createLinks(env, links)
+    let links = categorie.links[LOCALE]
+    links = await createLinks(env, links)
     categorie = await createEntry(env, 'categorie', categorie)
     return categorie
 }
 
 const createSubCategorie = async (env, subCategorie) => {
-    const links = subCategorie.links[LOCALE]
-    await createLinks(env, links)
+    let links = subCategorie.links[LOCALE]
+    links = await createLinks(env, links)
     subCategorie = await createEntry(env, 'subCategorie', subCategorie)
     return subCategorie
 }
@@ -78,19 +69,19 @@ const createCategorieWithSubCategories = async (env, categorie) => {
     return categorie
 }
 
-const createCategories = async (env, sitemapNav) => {
-    const categories = sitemapNav.categories[LOCALE]
+const createCategories = async (env, categories) => {
     for (let index = 0; index < categories.length; index++) {
         // if categorieWithSubCategories
-        if ('subCategories' in categories[index])
+        if ('subCategories' in categories[index]) {
             categories[index] = await createCategorieWithSubCategories(env, categories[index])
-        else
-            categories[index] = await createCategorie(env, categories[index])
+            continue
+        }
+        categories[index] = await createCategorie(env, categories[index])
     }
 }
 
-// updates references (categories || categoriesWithSubCategories) for field sitemap navigation 
-const updateFooterSitemapNavigation = async (env, categories) => {
+// updates field sitemap navigation with the categories 
+const updateSitemapNavigation = async (env, categories) => {
     try {
         const footer = await env.getEntry(FOOTERID)
         footer.fields.sitemapNavigation = categories
@@ -100,25 +91,14 @@ const updateFooterSitemapNavigation = async (env, categories) => {
         log(`Updated footer: ${FOOTERID} field: sitemap navigation`)
     }
     catch (err) {
-        log(`Error occured on createFieldSitemapNav. Field name: sitemap navigation`)
+        log(`Error occured on updateSitemapNavigation. Footer id: ${FOOTERID}`)
     }
 }
 
-/**
- * main function
- * extracts the sitemap navigation (which is a field on footer) from excel
- * creates the requested categories (entries) 
- * adds the entries to the specified footer's sitemap navigation field
- */
+// main
 (async () => {
-    try {
-        const env = await getEnvironment();
-        const sitemapNav = await extract(EXCEL) // should return categories instead
-        // outputs sitemapNav to the specified json file
-        outputObjectToFile(OUTPUT_FILE, sitemapNav)
-        await createCategories(env, sitemapNav)
-        await updateFooterSitemapNavigation(env, sitemapNav.categories)
-    } catch (err) {
-        log(`Error occured on main`)
-    }
+    const env = await getEnvironment()
+    const categories = await extract(EXCEL)
+    await createCategories(env, categories[LOCALE])
+    await updateSitemapNavigation(env, categories)
 })()
